@@ -44,7 +44,6 @@
     async function loop() {
         webcam.update(); // update the webcam frame
         await predict();
-        await delay(1000);
         window.requestAnimationFrame(loop);
     }
 
@@ -57,5 +56,6 @@
                 prediction[i].className + ": " + prediction[i].probability.toFixed(2);
             labelContainer.childNodes[i].innerHTML = classPrediction;
         }
+        await delay(1000);
     }
 </script>
